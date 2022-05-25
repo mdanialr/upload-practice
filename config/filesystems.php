@@ -42,6 +42,27 @@ return [
             'visibility' => 'public',
         ],
 
+        'document' => [
+            'driver' => 'local',
+            'root' => storage_path('app/documents'),
+            'url' => env('APP_URL').'/documents',
+            'visibility' => 'public',
+        ],
+
+        'image' => [
+            'driver' => 'local',
+            'root' => storage_path('app/images'),
+            'url' => env('APP_URL').'/images',
+            'visibility' => 'public',
+        ],
+
+        'upload' => [
+            'driver' => 'local',
+            'root' => storage_path('app/uploads'),
+            'url' => env('APP_URL').'/uploads',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -67,7 +88,9 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        public_path('uploads') => storage_path('app/uploads'),
+        public_path('documents') => storage_path('app/documents'),
+        public_path('images') => storage_path('app/images'),
     ],
 
 ];
